@@ -160,13 +160,15 @@ int tmin(void) {
 //2
 /*
  * isTmax - returns 1 if x is the maximum, two's complement number,
- *     and 0 otherwise 
+ *     and 0 otherwise
  *   Legal ops: ! ~ & ^ | +
  *   Max ops: 10
  *   Rating: 1
  */
 int isTmax(int x) {
-  
+  int y = x + 1;
+  int sum = x + y;
+  return !!y & !(~sum);
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
